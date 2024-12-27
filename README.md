@@ -1,3 +1,6 @@
 # notes_app
+This is Exercise 3 for Mobile Application Course.
 
-A new Flutter project.
+## Pairs:
+- Daryan Latif
+- Honyar Bakhtyar
