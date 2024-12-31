@@ -1,0 +1,6 @@
+{
+    "scripts": {
+        "server": "json-server --host 127.0.0.1 db.json",
+        "localhost": "json-server --host localhost db.json"
+    }
+}

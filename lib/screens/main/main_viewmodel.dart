@@ -15,6 +15,7 @@ class MainViewmodel extends Viewmodel {
   set editIndex(value) => update(() async => _editIndex = value);
 
   int? get listCount {
+    fetchNotes();
     if (_notes == null) return 0;
     return _notes?.length;
   }
@@ -28,7 +29,7 @@ class MainViewmodel extends Viewmodel {
   Future<void> addNote(Note note) async {
     update(() async {
       await _noteService.addNote(note);
-      await fetchNotes();
+      // await fetchNotes();
     });
   }
 
@@ -36,7 +37,6 @@ class MainViewmodel extends Viewmodel {
     required int index,
     required Note data,
   }) async {
-
     await _noteService.updateNote(id: _notes![index].id, data: data);
 
     _notes![index] = Note(
@@ -48,10 +48,10 @@ class MainViewmodel extends Viewmodel {
     notifyListeners();
   }
 
-  Future<void> removeNote(String id) async {
+  Future<void> removeNote(dynamic id) async {
     update(() async {
       await _noteService.removeNote(id);
-      await fetchNotes();
+      // await fetchNotes();
     });
   }
 
